@@ -1,0 +1,6 @@
+language: rust
+rust:
+  - stable
+script:
+  - ./build.sh
+  - cargo test --verbose --all
