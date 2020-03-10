@@ -1,6 +1,7 @@
 # Cross contract
 
 Example of using cross-contract functions, like promises, or money transfers.
+**Note**: many other examples use [Gitpod](https://www.gitpod.io/) to spin up an environment where smart contracts and their frontend can be quickly accessed. This example is best run locally with `nearcore`, as the instructions will explain.
 
 ## Several contracts
 We will use three tabs (or separate windows) in Terminal for this example for:
