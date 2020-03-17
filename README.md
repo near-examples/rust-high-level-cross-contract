@@ -1,9 +1,10 @@
 # Cross contract
 
 Example of using cross-contract functions, like promises, or money transfers.
+**Note**: many other examples use [Gitpod](https://www.gitpod.io/) to spin up an environment where smart contracts and their frontend can be quickly accessed. This example is best run locally with `nearcore`, as the instructions will explain.
 
 ## Several contracts
-We will use three tabs (or separate windows) in Terminal for this example for:
+We will use three tabs (or separate windows) in Terminal for this example:
 - **example tab** - this example project (likely `…/example-rust-high-level-cross-contract`)
 - **nearcore tab** - nearcore running an instance
 - **app tab** - small JavaScript app generated with `create-near-app`
@@ -13,7 +14,7 @@ Let's start the NEAR localnet so we can run a smart contract on it.
 * Make sure you have [Docker](https://www.docker.com/) installed
 * Clone the [nearprotocol/nearcore](https://github.com/nearprotocol/nearcore) repository
 
-To start your local node, go into `nearcore` in Terminal and run the following commands:
+To start your local node, go to the **nearcore tab** and run the following commands:
 ```bash
 rm -rf ~/.near
 ./scripts/start_localnet.py
