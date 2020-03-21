@@ -1,4 +1,7 @@
-# Cross contract
+High-level cross contract calls
+===============================
+
+<!-- MAGIC COMMENT: DO NOT DELETE! Everything above this line is hidden on NEAR Examples page -->
 
 Example of using cross-contract functions, like promises, or money transfers.
 **Note**: many other examples use [Gitpod](https://www.gitpod.io/) to spin up an environment where smart contracts and their frontend can be quickly accessed. This example is best run locally with `nearcore`, as the instructions will explain.
