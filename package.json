@@ -1,0 +1,28 @@
+{
+  "name": "high-level-cross-contract-builder",
+  "version": "1.0.0",
+  "description": "Compiles NEAR Protocol example of high-level cross-contract calls in Rust",
+  "scripts": {
+    "build": "cargo build --target wasm32-unknown-unknown --release",
+    "postbuild": "cp target/wasm32-unknown-unknown/release/cross_contract_high_level.wasm ./res/",
+    "test": "cargo test --package cross-contract-high-level -- --nocapture"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/near-examples/rust-high-level-cross-contract.git"
+  },
+  "keywords": [
+    "near-protocol",
+    "blockchain",
+    "rust",
+    "smart-contract",
+    "cross-contract"
+  ],
+  "author": "Mike Purvis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/near-examples/rust-high-level-cross-contract/issues"
+  },
+  "homepage": "https://github.com/near-examples/rust-high-level-cross-contract#readme",
+  "devDependencies": {}
+}
