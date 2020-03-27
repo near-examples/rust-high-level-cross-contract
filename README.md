@@ -6,6 +6,12 @@ High-level cross contract calls
 Example of using cross-contract functions, like promises, or money transfers.
 **Note**: many other examples use [Gitpod](https://www.gitpod.io/) to spin up an environment where smart contracts and their frontend can be quickly accessed. This example is best run locally with `nearcore`, as the instructions will explain.
 
+### Building the smart contract
+This example contains a compiled smart contract in the `./res` directory. To build, please run:
+```bash
+npm run build
+```
+
 ## Several contracts
 We will use three tabs (or separate windows) in Terminal for this example:
 - **example tab** - this example project (likely `…/example-rust-high-level-cross-contract`)
@@ -186,4 +192,10 @@ If you don't want to use it you can remove `#[serializer(borsh)]` annotation eve
 Finally, you may stop the running docker container(s) by running this command in the **nearcore tab**:
 ```bash
 ./scripts/stop.py
+```
+
+## Testing
+To run tests please run the follow command:
+```bash
+npm run test
 ```
