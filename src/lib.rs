@@ -41,10 +41,10 @@ pub trait ExtStatusMessage {
 
 #[near_bindgen]
 impl CrossContract {
-    pub fn deploy_status_message(&self, account_id: String, amount: u64) {
+    pub fn deploy_status_message(&self, account_id: String, amount: String) {
         Promise::new(account_id)
             .create_account()
-            .transfer(amount as u128)
+            .transfer(amount.parse().unwrap())
             .add_full_access_key(env::signer_account_pk())
             .deploy_contract(
                 include_bytes!("../status-message-contract/status_message.wasm").to_vec(),
@@ -136,7 +136,7 @@ impl CrossContract {
         )
     }
 
-    pub fn transfer_money(&mut self, account_id: String, amount: u64) {
-        Promise::new(account_id).transfer(amount as u128);
+    pub fn transfer_money(&mut self, account_id: String, amount: String) {
+        Promise::new(account_id).transfer(amount.parse().unwrap());
     }
 }
