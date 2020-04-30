@@ -1,5 +1,4 @@
-High-level cross contract calls
-===============================
+# High-level cross contract calls
 
 <!-- MAGIC COMMENT: DO NOT DELETE! Everything above this line is hidden on NEAR Examples page -->
 
@@ -7,9 +6,7 @@ Example of using cross-contract functions, like promises, or money transfers.
 
 **Note**: many other examples use [Gitpod](https://www.gitpod.io/) to spin up an environment where smart contracts and their frontend can be quickly accessed. This example is best run locally with `nearcore`, as the instructions will explain.
 
-
-Instructions
-============
+# Instructions
 
 We will use three tabs (or separate windows) in Terminal for this example:
 
@@ -19,8 +16,8 @@ We will use three tabs (or separate windows) in Terminal for this example:
 
 Let's start the NEAR localnet so we can run a smart contract on it.
 
-* Make sure you have [Docker](https://www.docker.com/) installed
-* Clone the [nearprotocol/nearcore](https://github.com/nearprotocol/nearcore) repository
+-   Make sure you have [Docker](https://www.docker.com/) installed
+-   Clone the [nearprotocol/nearcore](https://github.com/nearprotocol/nearcore) repository
 
 To start your local node, go to the **nearcore tab** and run the following commands:
 
@@ -66,9 +63,7 @@ Create the `cross_contract` account from `test_near` with an initial balance:
 
     near create_account cross_contract --masterAccount test_near  --initialBalance 10000000
 
-
-Deploying the `cross_contract` contract
----------------------------------------
+## Deploying the `cross_contract` contract
 
 You'll want to run the following `near deploy` command from the same **app tab** that you've been in, but you'll need to know the full path to the location of this repository (the **example tab**) on your machine.
 
@@ -80,17 +75,13 @@ Then, back in your **app tab**, run:
 
     near deploy --accountId cross_contract --wasmFile YOUR_PATH_HERE/res/cross_contract_high_level.wasm
 
-
-Deploying another contract
---------------------------
+## Deploying another contract
 
 Let's deploy another contract using the `cross_contract` that we just deployed, factory-style:
 
     near call cross_contract deploy_status_message '{"account_id": "status_message", "amount":1000000000000000}' --accountId test_near
 
-
-Trying money transfer
----------------------
+## Trying money transfer
 
 While still in the **app tab**, first check the balance on both `status_message` and `cross_contract` accounts:
 
@@ -110,9 +101,7 @@ Then check the balances again:
 
 Observe that `status_message` has `0.000000002` tokens, even though `test_near` signed the transaction and paid for all the gas that was used.
 
-
-Trying simple cross contract call
----------------------------------
+## Trying simple cross contract call
 
 Call `simple_call` function on `cross_contract` account:
 
@@ -126,9 +115,7 @@ Observe:
 
     'bonjour'
 
-
-Trying complex cross contract call
-----------------------------------
+## Trying complex cross contract call
 
 Call `complex_call` function on `cross_contract` account:
 
@@ -147,9 +134,7 @@ What just happened?
     3. Then the return value of `get_status` is programmed to be the return value of `complex_call`;
 3. `status_message` executed `set_status`, then `status_message` executed `get_status` and got the `"halo"` return value which is then passed as the return value of `complex_call`.
 
-
-Trying callback with return values
-----------------------------------
+## Trying callback with return values
 
 Call `merge_sort` function on `cross_contract` account:
 
@@ -176,9 +161,7 @@ Finally, you may stop the running docker container(s) by running this command in
 
     ./scripts/stop.py
 
-
-Playing with the code
-=====================
+# Playing with the code
 
 After you make changes in `src/lib.rs`, recompile the contract with:
 
