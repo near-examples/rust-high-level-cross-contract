@@ -185,3 +185,9 @@ After you make changes in `src/lib.rs`, recompile the contract with:
     yarn build
 
 Then redeploy the contract, following the "deploying the `cross_contract` contract" instructions above.
+
+
+Data collection
+===============
+
+By using Gitpod in this project, you agree to opt-in to basic, anonymous analytics. No personal information is transmitted. Instead, these usage statistics aid in discovering potential bugs and user flow information.
